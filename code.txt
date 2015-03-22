@@ -1,0 +1,15 @@
+import java.io.*;
+public class app
+{ 
+public static void main(String args[])throws IOException
+{
+InputStreamReader read= new InputStreamReader(System.in);
+BufferReader  in = new BufferReader(read);
+System.out.println("Enter the word");
+String s = in.readLine();
+HttpResponse<JsonNode> response = Unirest.get("https://montanaflynn-dictionary.p.mashape.com/define?word=s")
+.header("X-Mashape-Key", "1T2wUBq331mshY094yKcMg3Wbdwkp1yxeaGjsncO76mPiczpSG")
+.header("Accept", "application/json")
+.asJson();
+}
+}
